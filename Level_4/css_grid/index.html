@@ -66,3 +66,13 @@
       <section><h2>Support</h2><ul><li><a href="#">Help center</a></li><li><a href="#">Contact</a></li><li><a href="#">Status</a></li></ul></section>
     </footer>
   </div>
+
+  <script>
+  // Collapse or expand a sidebar by toggling a class; CSS does the rest.
+  document.querySelectorAll(".toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const collapsed = document.querySelector(".layout").classList.toggle(btn.dataset.side + "-collapsed");
+      btn.setAttribute("aria-expanded", String(!collapsed));
+    });
+  });
+</script>
