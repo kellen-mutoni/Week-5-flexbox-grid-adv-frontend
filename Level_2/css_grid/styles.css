@@ -101,3 +101,42 @@ ul {
 .sidebar ul {
   padding-left: 1.25rem;
 }
+
+/* grid-style.css: Level 2 layout only.
+   Mobile-first: the base rules are the mobile layout, the media query redraws the map. */
+ 
+/* .columns exists only so the flexbox version can nest. Here its children
+   take part directly in the .layout grid. */
+.columns {
+  display: contents;
+}
+ 
+.site-header { grid-area: header; }
+.site-nav    { grid-area: nav; }
+.content     { grid-area: main; }
+.sidebar     { grid-area: sidebar; }
+.site-footer { grid-area: footer; }
+ 
+/* Mobile: one column, every area on its own row. */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "footer";
+}
+ 
+/* Desktop: main content 7fr (70%), sidebar 3fr (30%). */
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas:
+      "header  header"
+      "nav     nav"
+      "main    sidebar"
+      "footer  footer";
+  }
+}
