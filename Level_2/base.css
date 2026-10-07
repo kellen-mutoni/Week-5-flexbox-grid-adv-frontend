@@ -1,0 +1,21 @@
+/* base.css: shared by both versions.
+   Reset, colors, typography and spacing live here once.
+   Layout (sizing and placement of the six regions) lives only in
+   flexbox-style.css and grid-style.css. */
+ 
+:root {
+  --ink: #1b1f24;
+  --paper: #ffffff;
+  --panel: #eef1f4;
+  --bar: #1f2933;
+  --bar-ink: #ffffff;
+  --line: #c9d1d9;
+  --link: #0b5cad;
+  --pad: 1rem;
+}
+ 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
