@@ -82,3 +82,24 @@ footer {
     background: #e9ecef;
     border-radius: 8px;
 }
+
+@media (max-width: 900px) {
+    .layout {
+        flex-wrap: wrap;
+    }
+
+    main {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .left-sidebar {
+        flex: 1 1 50%;
+        order: 2;
+    }
+
+    .right-sidebar {
+        flex: 1 1 50%;
+        order: 3;
+    }
+}
