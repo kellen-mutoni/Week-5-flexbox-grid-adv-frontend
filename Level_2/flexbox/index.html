@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Flexbox Layout</title>
-        <link rel="stylesheet" href="level2/base.css">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="layout">
-            <header class="site-header">
-                <h1>Flexbox Layout</h1>
-                <p>Level 2: The same paeg built with nested flex containers.</p>
-            </header>
-
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="flexbox.html" aria-current="page">Flexbox version</a></li>
-                    <li><a href="grid.html">Grid version</a></li>
-                    <li><a href="#main-content">Main content</a></li>
-                    <li><a href="#sidebar">Sidebar</a></li>
-                </ul>
-            </nav>
-
-            <div class="columns">
-                <main class="content" id="main-content">
-                    <h2>Main Content</h2>
-                    <p>This page is the Level 2 layout from the activity: a header, a navigation bar, a main content area (70%) with a sidebar (30%), and a footer. It is built twice with identical HTML and identical colors and type. Only the layout CSS file changes.</p>
-                    <h3>How it responds</h3>
-                    <ul>
-                        <li><strong>Desktop, 768px and wider:</strong> the main content and the sidebar sit side by side at 70% and 30%.</li>
-                      <li><strong>Mobile, under 768px:</strong> every section stacks vertically in a single column.</li>
-                    </ul>
-                    <p>Resize the browser window, or open the developer tools device toolbar, to watch the layout change at the breakpoint. Open the other version in a second tab and compare: the two should look the same at every width.</p>
-                </main>
-
-                <aside class="sidebar" id="sidebar" aria-label="Learning resources">
-                    <h2>Resources</h2>
-                    <ul>
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">MDN: Flexbox</a></li>
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids">MDN: Grid</a></li>
-                    <li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
-                    <li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
-                    </ul>
-                </aside>
-            </div>
-            <footer class="site-footer">
-                <p>Flexbox vs. Grid learning activity, Level 2.</p>
-            </footer>
-        </div>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox Layout | Level 2</title>
+  <link rel="stylesheet" href="flexbox-style.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="site-header">
+      <h1>Flexbox layout</h1>
+      <p>Level 2: the same page built with nested flex containers.</p>
+    </header>
+ 
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Flexbox version</a></li>
+        <li><a href="../css_grid/index.html">Grid version</a></li>
+        <li><a href="#main-content">Main content</a></li>
+        <li><a href="#sidebar">Sidebar</a></li>
+      </ul>
+    </nav>
+ 
+    <div class="columns">
+      <main class="content" id="main-content">
+        <h2>Same page, two layout systems</h2>
+        <p>This page is the Level 2 layout from the activity: a header, a navigation bar, a main content area (70%) with a sidebar (30%), and a footer. It is built twice with identical HTML and identical colors and type. Only the layout CSS file changes.</p>
+        <h3>How it responds</h3>
+        <ul>
+          <li><strong>Desktop, 768px and wider:</strong> the main content and the sidebar sit side by side at 70% and 30%.</li>
+          <li><strong>Mobile, under 768px:</strong> every section stacks vertically in a single column.</li>
+        </ul>
+        <p>Resize the browser window, or open the developer tools device toolbar, to watch the layout change at the breakpoint. Open the other version in a second tab and compare: the two should look the same at every width.</p>
+      </main>
+ 
+      <aside class="sidebar" id="sidebar" aria-label="Learning resources">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">MDN: Flexbox</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids">MDN: Grid</a></li>
+          <li><a href="https://flexboxfroggy.com/">Flexbox Froggy</a></li>
+          <li><a href="https://cssgridgarden.com/">Grid Garden</a></li>
+        </ul>
+      </aside>
+    </div>
+ 
+    <footer class="site-footer">
+      <p>Flexbox vs. Grid learning activity, Level 2.</p>
+    </footer>
+  </div>
+</body>
 </html>
