@@ -44,3 +44,51 @@ p,
 ul {
   margin-top: 0;
 }
+
+/* Regions */
+.site-header,
+.site-nav,
+.site-footer,
+.content,
+.sidebar {
+  padding: var(--pad);
+}
+ 
+.site-header,
+.site-nav,
+.site-footer {
+  background: var(--bar);
+  color: var(--bar-ink);
+}
+ 
+.site-header h1 {
+  margin-bottom: 0.25rem;
+  font-size: 1.75rem;
+}
+ 
+.site-header p,
+.site-footer p {
+  margin-bottom: 0;
+}
+ 
+.site-nav {
+  border-top: 1px solid #3e4c59;
+}
+ 
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ 
+.site-nav a {
+  color: inherit;
+}
+ 
+.site-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: none;
+}
