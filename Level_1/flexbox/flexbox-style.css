@@ -1,0 +1,44 @@
+/* Reset: remove the browser's default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LAYOUT: stack header, main and footer in one column */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header and footer: fixed height */
+.site-header,
+.site-footer {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main: grows to fill all leftover space */
+.site-main {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+/* COLOURS: looks only, not layout */
+.site-header { background: #1f3a5f; color: white; }
+.site-main   { background: #eef2f7; }
+.site-footer { background: #1f3a5f; color: white; }
+/* RESPONSIVE: smaller bars and text on phones */
+@media (max-width: 600px) {
+  .site-header,
+  .site-footer {
+    height: 60px;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+}

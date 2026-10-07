@@ -1,0 +1,40 @@
+/* Reset: remove the browser's default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LAYOUT: three rows, header and footer fixed, main fills the rest */
+body {
+  display: grid;
+  grid-template-rows: 80px 1fr 80px;
+  min-height: 100vh;
+}
+
+/* Header and footer: center their text */
+.site-header,
+.site-footer {
+  display: grid;
+  place-items: center;
+}
+
+.site-main {
+  padding: 1rem;
+}
+
+/* COLOURS: looks only, not layout */
+.site-header { background: #1f3a5f; color: white; }
+.site-main   { background: #eef2f7; }
+.site-footer { background: #1f3a5f; color: white; }
+
+/* RESPONSIVE: smaller bars and text on phones */
+@media (max-width: 600px) {
+  body {
+    grid-template-rows: 60px 1fr 60px;
+  }
+
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+}
