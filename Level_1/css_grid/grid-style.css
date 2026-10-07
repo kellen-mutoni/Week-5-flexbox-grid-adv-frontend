@@ -28,6 +28,20 @@ body {
 .site-main   { background: #eef2f7; }
 .site-footer { background: #1f3a5f; color: white; }
 
+/* IMAGE: fills its container on small screens, capped on large ones */
+.site-main img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 1rem auto;
+}
+
+/* Center the main heading */
+.site-main h2 {
+  text-align: center;
+}
+
 /* RESPONSIVE: smaller bars and text on phones */
 @media (max-width: 600px) {
   body {
