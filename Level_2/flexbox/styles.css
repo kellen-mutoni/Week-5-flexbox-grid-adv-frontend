@@ -1,0 +1,33 @@
+
+/* flexbox-style.css: Level 2 layout only (colors, type and spacing are in base.css).
+   Mobile-first: the base rules are the mobile layout, the media query adds desktop. */
+ 
+/* Outer container: header, nav, columns and footer stack in one flex column. */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* Nested container: a wrapping row for the main content and the sidebar. */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+/* Mobile: each region takes a full row, so everything stacks. */
+.content,
+.sidebar {
+  flex: 1 1 100%;
+}
+
+/* Desktop: main content 70%, sidebar 30%, side by side. */
+@media (min-width: 768px) {
+  .content {
+    flex-basis: 70%;
+  }
+ 
+  .sidebar {
+    flex-basis: 30%;
+  }
+}
