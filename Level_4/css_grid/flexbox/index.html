@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox Holy Grail | Level 4</title>
+  <link rel="stylesheet" href="flexbox.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="site-header">
+      <a class="logo" href="#">Holy Grail</a>
+      <details class="user-menu">
+        <summary>Account</summary>
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Sign out</a></li>
+        </ul>
+      </details>
+    </header>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../flexbox/index.html">Flexbox version</a></li>
+        <li><a href="index.html" aria-current="page">Grid version</a></li>
+        <li><a href="#main-content">Articles</a></li>
+        <li><a href="#main-content">Gallery</a></li>
+        <li><a href="#main-content">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="columns">
+      <main class="content" id="main-content">
+        <h1>Grid Holy Grail layout</h1>
+        <p>Level 4, built with CSS Grid with subgrid. Resize the window to see four layouts, and collapse either sidebar with its button.</p>
+        <div class="cards">
+          <article class="card"><h3>Featured story</h3><p>Wide enough main content turns this card into a full-width feature.</p></article>
+          <article class="card"><h3>Card two</h3><p>Cards grow, shrink and wrap as space changes.</p></article>
+          <article class="card"><h3>Card three</h3><p>Collapse a sidebar and these cards reflow into the freed space.</p></article>
+          <article class="card"><h3>Card four</h3><p>No media query is needed for the card reflow.</p></article>
+          <article class="card"><h3>Card five</h3><p>Only the page structure changes at breakpoints.</p></article>
+          <article class="card"><h3>Card six</h3><p>Same HTML in both versions.</p></article>
+
+        </div>
+        </main>
+
+        <aside class="sidebar sidebar-left" aria-label="Left sidebar">
+            <button class="toggle" data-side="left" aria-expanded="true" aria-controls="left-panel"><span aria-hidden="true">☰</span><span class="label">Left sidebar</span></button>
+            <div class="panel" id="left-panel">
+                <ul><li><a href="#">Dashboard</a></li><li><a href="#">Projects</a></li><li><a href="#">Reports</a></li></ul>
+            </div>
+        </aside>
+
+        <aside class="sidebar sidebar-right" aria-label="Right sidebar">
+        <button class="toggle" data-side="right" aria-expanded="true" aria-controls="right-panel"><span aria-hidden="true">☰</span><span class="label">Right sidebar</span></button>
+        <div class="panel" id="right-panel">
+          <ul><li><a href="#">Latest news</a></li><li><a href="#">Events</a></li><li><a href="#">Help</a></li></ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <section><h2>Learn</h2><ul><li><a href="#">Flexbox guide</a></li><li><a href="#">Grid guide</a></li><li><a href="#">Subgrid</a></li></ul></section>
+      <section><h2>Company</h2><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul></section>
+      <section><h2>Support</h2><ul><li><a href="#">Help center</a></li><li><a href="#">Contact</a></li><li><a href="#">Status</a></li></ul></section>
+    </footer>
+  </div>
+
+  <script>
+  // Collapse or expand a sidebar by toggling a class; CSS does the rest.
+  document.querySelectorAll(".toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const collapsed = document.querySelector(".layout").classList.toggle(btn.dataset.side + "-collapsed");
+      btn.setAttribute("aria-expanded", String(!collapsed));
+    });
+  });
+</script>

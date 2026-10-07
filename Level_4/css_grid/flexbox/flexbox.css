@@ -1,0 +1,432 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --header-height: 80px;
+    --nav-height: 60px;
+    --sidebar-width: 220px;
+    --page-padding: 25px;
+    --gap: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: #f8f9fa;
+    color: #222;
+}
+
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.site-header {
+    height: var(--header-height);
+    background: #1d3557;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--page-padding);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: bold;
+}
+
+.user-menu {
+    margin-left: auto;
+    position: relative;
+}
+
+.user-menu summary {
+    cursor: pointer;
+    background: #457b9d;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.user-menu ul {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 150px;
+    background: white;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-menu a {
+    display: block;
+    padding: 8px;
+    color: #222;
+    text-decoration: none;
+}
+
+/* Navigation */
+
+.site-nav {
+    min-height: var(--nav-height);
+    background: #457b9d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-top: var(--header-height);
+}
+
+.site-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Holy Grail layout */
+
+.columns {
+    display: flex;
+    flex: 1;
+    min-height: 500px;
+    gap: var(--gap);
+    padding: var(--page-padding);
+    background: #f8f9fa;
+}
+
+/* Left sidebar */
+
+.sidebar-left {
+    flex: 0 0 var(--sidebar-width);
+    order: 1;
+    align-self: flex-start;
+    background: #f1faee;
+    padding: 20px;
+}
+
+/* Main content */
+
+.content {
+    flex: 1 1 auto;
+    order: 2;
+    min-width: 0;
+    background: white;
+    padding: var(--page-padding);
+    container-type: inline-size;
+    container-name: main-content;
+}
+
+.content h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 15px;
+}
+
+.content > p {
+    line-height: 1.6;
+}
+
+/* Right sidebar */
+
+.sidebar-right {
+    flex: 0 0 var(--sidebar-width);
+    order: 3;
+    align-self: flex-start;
+    background: #f1faee;
+    padding: 20px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    border-radius: 8px;
+}
+
+.sidebar .toggle {
+    width: 100%;
+    border: none;
+    background: #1d3557;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sidebar .label {
+    margin-left: 5px;
+}
+
+.sidebar .panel {
+    margin-top: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #1d3557;
+    text-decoration: none;
+}
+
+/* Sidebar collapse */
+
+.layout.left-collapsed .sidebar-left {
+    flex-basis: 60px;
+}
+
+.layout.right-collapsed .sidebar-right {
+    flex-basis: 60px;
+}
+
+.layout.left-collapsed .sidebar-left .panel,
+.layout.right-collapsed .sidebar-right .panel {
+    display: none;
+}
+
+.layout.left-collapsed .sidebar-left .label,
+.layout.right-collapsed .sidebar-right .label {
+    display: none;
+}
+
+/* Cards */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1 1 220px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+/* Container query */
+
+@container main-content (min-width: 850px) {
+    .card:first-child {
+        flex-basis: 100%;
+    }
+}
+
+@container main-content (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Footer */
+
+.site-footer {
+    min-height: 120px;
+    background: #1d3557;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+}
+
+.site-footer section {
+    flex: 1 1 0;
+}
+
+.site-footer h2 {
+    margin-bottom: 10px;
+}
+
+.site-footer ul {
+    list-style: none;
+}
+
+.site-footer li {
+    margin-bottom: 8px;
+}
+
+.site-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Large desktop */
+
+@media (min-width: 1201px) {
+    .columns {
+        gap: 30px;
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        flex-basis: 240px;
+    }
+}
+
+/* Desktop */
+
+@media (max-width: 1200px) {
+    .sidebar-left,
+    .sidebar-right {
+        flex-basis: 200px;
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+    .columns {
+        flex-wrap: wrap;
+    }
+
+    .content {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .sidebar-left {
+        flex: 1 1 0;
+        order: 2;
+    }
+
+    .sidebar-right {
+        flex: 1 1 0;
+        order: 3;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+
+    .site-footer  {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .site-header {
+        height: 70px;
+    }
+
+    .site-nav {
+        margin-top: 70px;
+    }
+
+    .site-nav ul {
+        gap: 15px;
+    }
+
+    .columns {
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .content {
+        order: 1;
+    }
+
+    .sidebar-left {
+        order: 2;
+    }
+
+    .sidebar-right {
+        order: 3;
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .site-footer section {
+        width: 100%;
+    }
+}
+
+/* Small mobile */
+
+@media (max-width: 576px) {
+    .site-header {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .site-nav {
+        padding: 12px;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .sidebar-left,
+    .sidebar-right {
+        padding: 15px;
+    }
+}
