@@ -103,3 +103,31 @@ footer {
         order: 3;
     }
 }
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    main {
+        order: 1;
+    }
+
+    .left-sidebar {
+        order: 2;
+    }
+
+    .right-sidebar {
+        order: 3;
+    }
+
+    .left-sidebar,
+    main,
+    .right-sidebar {
+        flex: 1 1 100%;
+    }
+}
