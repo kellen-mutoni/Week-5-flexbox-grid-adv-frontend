@@ -1,6 +1,8 @@
+Level 1 Reflections:
+
 For Level 1, I found Grid a little easier to implement. In Flexbox, I needed three things working together: display flex and flex-direction column on the body, then flex-grow on the main section so it fills the leftover space. In Grid, one line did the whole job: grid-template-rows 80px 1fr 80px. The header, main, and footer just dropped into their rows without any extra rules.
 
-Grid also needed a bit less code. The Grid version had no sizing rule on the main element at all, because the 1fr row handled it. The responsive part showed this best. To make the bars shorter on phones, Grid only needed one changed value in grid-template-rows, while Flexbox needed me to change the height rule for the header and footer.
+Grid needed slightly less layout code. Counting the layout lines in my two files, Grid had about five and Flexbox had about eight. Grid needed no sizing rule on the main element at all, because the 1fr row handled it. The difference is small, though. For the phone version, both only needed one changed value, so it's no big win.
 
 For responsiveness, both versions used one media query at 600px. I also made the photo shrink with width 100 percent and a max-width of 500px, so nothing overflows on phones. Testing at 375px in the browser developer tools confirmed that the footer stays at the bottom and the layout does not break.
 
