@@ -1,0 +1,11 @@
+Level 1 Reflections:
+
+For Level 1, I found Grid a little easier to implement. In Flexbox, I needed three things working together: display flex and flex-direction column on the body, then flex-grow on the main section so it fills the leftover space. In Grid, one line did the whole job: grid-template-rows 80px 1fr 80px. The header, main, and footer just dropped into their rows without any extra rules.
+
+Grid needed slightly less layout code. Counting the layout lines in my two files, Grid had about five and Flexbox had about eight. Grid needed no sizing rule on the main element at all, because the 1fr row handled it. The difference is small, though. For the phone version, both only needed one changed value, so it's no big win.
+
+For responsiveness, both versions used one media query at 600px. I also made the photo shrink with width 100 percent and a max-width of 500px, so nothing overflows on phones. Testing at 375px in the browser developer tools confirmed that the footer stays at the bottom and the layout does not break.
+
+Flexbox felt more intuitive at first. Items sit in a line, and flex-grow simply means take the extra space. Grid made me plan the rows before placing anything, and the fr unit confused me for a moment. Once I understood it, I could read the whole layout from one line, so Grid felt more like a blueprint.
+
+I would use Flexbox for one-direction jobs like navigation bars, rows of cards, or centering text inside a bar, which I did in my header. I would use Grid for whole page layouts where rows and columns both matter, like the sidebar layouts in the later levels. Both versions looked identical here, so the real difference was how the code was organized, not the result.
